@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Detailing | Премиум шаблон</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- STICKY HEADER -->
+    <div class="sticky-header">
+        <div class="container sticky-inner">
+            <a href="#" class="logo">LUXURY<span>DETAILING</span></a>
+            <nav class="sticky-nav">
+                <a href="#services">Оклейка пленкой</a>
+                <a href="#services">Полировка</a>
+                <a href="#services">Детейлинг</a>
+                <a href="#services">Уход</a>
+            </nav>
+            <a href="#callback" class="btn-sm">Оставить заявку</a>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="#" class="logo">LUXURY<span>DETAILING</span></a>
+            <div class="header-city">
+                <a href="#">Москва 📍</a>
+            </div>
+            <nav class="nav">
+                <a href="#services">Услуги +</a>
+                <a href="#about">О компании +</a>
+            </nav>
+            <div class="header-contact">
+                <a href="tel:+79990000000" class="phone">+7 (999) 000-00-00</a>
+                <a href="#callback" class="btn-outline-header">Связаться с нами &rarr;</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-slider">
+            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80')"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&q=80')"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1550355291-bbee04a92027?auto=format&fit=crop&q=80')"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&q=80')"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80')"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1611821064430-0d40221e4f03?auto=format&fit=crop&q=80')"></div>
+        </div>
+        <div class="container hero-container">
+            <div class="hero-text">
+                <h1 id="hero-title">Малярные работы</h1>
+                <p id="hero-desc">Полная и локальная покраска деталей автомобиля, профессиональные колористы и маляры с опытом более 10 лет.</p>
+            </div>
+            <div class="hero-controls">
+                <div class="slider-counter">
+                    <span id="current-slide">1</span> / 6
+                </div>
+                <div class="slider-arrows">
+                    <button id="prev-slide">&lt;</button>
+                    <button id="next-slide">&gt;</button>
+                </div>
+                <a href="#services" class="btn-outline-header">Выбрать услугу &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats">
+        <div class="container stats-grid">
+            <div class="stat-item">
+                <div class="stat-num">10</div>
+                <div class="stat-text">Лет на рынке</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num">11000+</div>
+                <div class="stat-text">Довольных клиентов</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num">3</div>
+                <div class="stat-text">Филиала</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num">150+</div>
+                <div class="stat-text">Специалистов</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN SERVICES GRID -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Предлагаем вам широкий спектр по защите и уходу за вашим автомобилем</h2>
+            
+            <div class="services-masonry">
+                <!-- Card 1 -->
+                <div class="service-block bg-wrap">
+                    <h3>Оклейка пленкой</h3>
+                    <ul class="service-links">
+                        <li><a href="#">Оклейка виниловой пленкой</a></li>
+                        <li><a href="#">Оклейка декоративных элементов</a></li>
+                        <li><a href="#">Оклейка антигравийной пленкой</a></li>
+                        <li><a href="#">Бронирование лобового стекла</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="service-block bg-polish">
+                    <h3>Полировка автомобиля</h3>
+                    <ul class="service-links">
+                        <li><a href="#">Полировка кузова автомобиля</a></li>
+                        <li><a href="#">Полировка деталей салона</a></li>
+                    </ul>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="service-block bg-detailing">
+                    <h3>Детейлинг уход</h3>
+                    <ul class="service-links">
+                        <li><a href="#">Химчистка салона автомобиля</a></li>
+                        <li><a href="#">Уход за подкапотным пространством</a></li>
+                        <li><a href="#">Глубокая очистка радиатора</a></li>
+                        <li><a href="#">Детейлинг уход за подвеской</a></li>
+                    </ul>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="service-block bg-ceramic">
+                    <h3>Керамические покрытия</h3>
+                    <ul class="service-links">
+                        <li><a href="#">Керамическое покрытие для кузова</a></li>
+                        <li><a href="#">Защита дисков</a></li>
+                        <li><a href="#">Керамика для салона</a></li>
+                        <li><a href="#">Антидождь</a></li>
+                    </ul>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="service-block bg-paint">
+                    <h3>Малярные работы</h3>
+                    <ul class="service-links">
+                        <li><a href="#">Покраска автомобиля</a></li>
+                        <li><a href="#">Локальная покраска</a></li>
+                        <li><a href="#">Пакет «Антихром»</a></li>
+                        <li><a href="#">Окрас дисков</a></li>
+                    </ul>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="service-block bg-interior">
+                    <h3>Перетяжка салона</h3>
+                    <ul class="service-links">
+                        <li><a href="#">Перешив руля</a></li>
+                        <li><a href="#">Реставрация салона</a></li>
+                        <li><a href="#">Ремонт сидений автомобиля</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="services-action">
+                <a href="#" class="btn-outline-white">Смотреть все услуги</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALCULATOR -->
+    <section class="calculator">
+        <div class="container">
+            <h2 class="section-title">Рассчитать стоимость услуг</h2>
+            <div class="calc-wrapper">
+                <div class="calc-form">
+                    <div class="calc-group">
+                        <label>Марка и модель автомобиля</label>
+                        <input type="text" placeholder="Например: BMW X5">
+                    </div>
+                    <div class="calc-services">
+                        <label class="calc-checkbox">
+                            <input type="checkbox"> <span>Оклейка пленкой</span>
+                        </label>
+                        <label class="calc-checkbox">
+                            <input type="checkbox"> <span>Полировка кузова</span>
+                        </label>
+                        <label class="calc-checkbox">
+                            <input type="checkbox"> <span>Химчистка салона</span>
+                        </label>
+                        <label class="calc-checkbox">
+                            <input type="checkbox"> <span>Керамика</span>
+                        </label>
+                    </div>
+                    <div class="calc-action">
+                        <button type="button" class="btn-main" onclick="alert('Это демонстрационный шаблон. Форма никуда не отправляется.')">Узнать цену</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <h2 class="section-title">Отзывы популярных личностей</h2>
+            <p class="section-subtitle">Каждый ваш отзыв мотивирует нашу команду становиться лучше, чтобы продолжать радовать вас качественным обслуживанием</p>
+            
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-header">
+                        <h4>Александр В.</h4>
+                        <span>Владелец Porsche 911</span>
+                    </div>
+                    <p class="review-text">"Забрал сегодня машину из студии. Спасибо ребятам, машина как новая, лучший сервис в городе — рекомендую: отмыли, отполировали, покрыли керамикой и защитили пленкой!"</p>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-header">
+                        <h4>Максим Т.</h4>
+                        <span>Владелец Mercedes-AMG G63</span>
+                    </div>
+                    <p class="review-text">"Доверил ребятам полную перетяжку салона и оклейку матовым полиуретаном. Идеальное качество работы, безупречные швы и внимание к мельчайшим деталям."</p>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-header">
+                        <h4>Михаил С.</h4>
+                        <span>Владелец BMW X7</span>
+                    </div>
+                    <p class="review-text">"Регулярно привожу свой автомобиль на детейлинг-уход. Всегда уверен в результате: кузов сияет, в салоне идеальная чистота. Ребята настоящие профессионалы."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Ответы на вопросы</h2>
+            <p class="section-subtitle">Мы позаботились о вас и собрали часто задаваемые вопросы, ответы на которые вы найдете тут</p>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-num">01</span>
+                        <h3>Что включает в себя детейлинг автомобиля?</h3>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Детейлинг – это комплексная чистка автомобиля, включающая как внешнюю, так и внутреннюю обработку. Это может включать очистку кузова, полировку, обработку стекол, химчистку салона и нанесение защитных покрытий.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-num">02</span>
+                        <h3>Чем отличается детейлинг от обычного ухода за автомобилем?</h3>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Обычный уход удаляет поверхностную грязь, тогда как детейлинг – это более глубокая очистка и защита автомобиля с применением специализированных средств и технологий.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-num">03</span>
+                        <h3>Как часто нужно делать детейлинг?</h3>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Рекомендуется проводить детейлинг 1-2 раза в год, в зависимости от условий эксплуатации автомобиля, чтобы поддерживать его внешний вид и защитные покрытия.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT FORM -->
+    <section id="callback" class="lead-form-section" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&q=80')">
+        <div class="container">
+            <div class="lead-form-inner">
+                <div class="lead-text">
+                    <h2>Остались вопросы?</h2>
+                    <p>Заполните форму обратной связи и наш менеджер<br>свяжется с вами</p>
+                </div>
+                <form class="lead-form" onsubmit="event.preventDefault(); alert('Это демо-версия сайта. Заявки отключены.');">
+                    <input type="text" placeholder="Ваше имя" required>
+                    <input type="tel" placeholder="Номер телефона" required>
+                    <label class="form-policy-checkbox">
+                        <input type="checkbox" required>
+                        <span>Нажимая кнопку, Вы даете согласие на <a href="#">обработку<br>персональных данных</a> и соглашаетесь c <a href="#">Политикой<br>конфиденциальности</a> *</span>
+                    </label>
+                    <button type="submit" class="btn-outline-white round">Получить консультацию</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col brand-col">
+                <a href="/" class="logo">LUXURY<span>DETAILING</span></a>
+                <a href="tel:+79990000000" class="footer-phone">+7 (999) 000-00-00</a>
+                <a href="#callback" class="btn-sm">Связаться с нами</a>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Адреса в Москве:</h4>
+                <ul>
+                    <li><a href="#">г. Москва, Кутузовский проспект, 2/1</a></li>
+                    <li><a href="#">г. Москва, Пресненская наб., 12</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Услуги</h4>
+                <ul>
+                    <li><a href="#">Оклейка пленкой</a></li>
+                    <li><a href="#">Полировка автомобиля</a></li>
+                    <li><a href="#">Детейлинг уход</a></li>
+                    <li><a href="#">Керамические покрытия</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Компания</h4>
+                <ul>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Контакты</a></li>
+                    <li><a href="#">Портфолио</a></li>
+                    <li><a href="#">Отзывы</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2024 Luxury Detailing. Все права защищены. Дизайн-шаблон для портфолио.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

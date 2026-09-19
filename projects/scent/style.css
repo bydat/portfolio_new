@@ -1,0 +1,1000 @@
+/* SENSE LAB Stylesheet */
+
+/* 1. Global Reset & Variables */
+:root {
+    --bg-dark: #070707;
+    --bg-card: #121212;
+    --brand-gold: #C5A059;
+    --brand-gold-glow: rgba(197, 160, 89, 0.15);
+    --brand-gold-dark: #98783B;
+    --text-primary: #F5F5F7;
+    --text-secondary: #8E8E93;
+    --text-muted: #4E4E52;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --border-hover: rgba(197, 160, 89, 0.4);
+    --glass-bg: rgba(18, 18, 18, 0.6);
+    --glass-blur: blur(12px);
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+}
+
+/* 3. Ambient Background Lights */
+.ambient-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.25;
+}
+
+.glow-1 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, var(--brand-gold) 0%, transparent 70%);
+    top: 10%;
+    left: -100px;
+}
+
+.glow-2 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, #2E4536 0%, transparent 70%);
+    top: 50%;
+    right: -150px;
+}
+
+/* 4. Common Layout & Grid */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.section-head {
+    margin-bottom: 60px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-subtitle {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--brand-gold);
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+.section-title {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    color: var(--text-primary);
+}
+
+.section-desc {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+/* 5. Header */
+.header {
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: rgba(7, 7, 7, 0.8);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.header-inner {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--brand-gold);
+}
+
+.nav {
+    display: flex;
+    gap: 32px;
+}
+
+.nav a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: var(--brand-gold);
+}
+
+.btn-primary-scent {
+    display: inline-block;
+    padding: 10px 24px;
+    border: 1px solid var(--brand-gold);
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.btn-primary-scent:hover {
+    background-color: var(--brand-gold);
+    color: var(--bg-dark);
+    box-shadow: 0 0 15px var(--brand-gold-glow);
+}
+
+/* 6. Hero Section */
+.hero {
+    padding-top: 180px;
+    padding-bottom: 100px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-inner {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.hero-subtitle {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--brand-gold);
+    display: block;
+    margin-bottom: 16px;
+}
+
+.hero-title {
+    font-family: var(--font-serif);
+    font-size: 4.5rem;
+    font-weight: 300;
+    line-height: 1.15;
+    margin-bottom: 24px;
+    color: var(--text-primary);
+}
+
+.hero-desc {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    max-width: 540px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.btn-scent-solid {
+    display: inline-block;
+    padding: 16px 36px;
+    background-color: var(--brand-gold);
+    color: var(--bg-dark);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border: 1px solid var(--brand-gold);
+}
+
+.btn-scent-solid:hover {
+    background-color: transparent;
+    color: var(--brand-gold);
+    box-shadow: 0 0 20px var(--brand-gold-glow);
+}
+
+.btn-scent-text {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.btn-scent-text:hover {
+    color: var(--brand-gold);
+}
+
+/* Hero Visual */
+.hero-visual {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.visual-card {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    border: 1px solid var(--border-color);
+}
+
+.hero-image {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.visual-card:hover .hero-image {
+    transform: scale(1.03);
+}
+
+.glass-tag {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    right: 24px;
+    background: rgba(18, 18, 18, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.tag-title {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.tag-desc {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+    display: block;
+}
+
+/* 7. Constructor Section */
+.constructor-section {
+    padding: 100px 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.constructor-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    margin-top: 50px;
+}
+
+/* Sliders Control */
+.constructor-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.control-group {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 24px;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+}
+
+.control-group:hover {
+    border-color: var(--border-hover);
+}
+
+.control-group-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.control-group-header h3 {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.percentage-val {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--brand-gold);
+}
+
+.control-desc {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+}
+
+.slider-wrapper {
+    width: 100%;
+}
+
+.scent-slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 4px;
+    background: var(--text-muted);
+    outline: none;
+    border-radius: 2px;
+}
+
+.scent-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--brand-gold);
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--brand-gold);
+    transition: transform 0.1s;
+}
+
+.scent-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+/* Perfume Bottle Representation */
+.constructor-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.perfume-bottle-container {
+    width: 260px;
+    height: 380px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Vial cap */
+.bottle-cap {
+    width: 80px;
+    height: 50px;
+    background: linear-gradient(135deg, #1b1b1b, #333333 30%, #111111 70%, #2b2b2b);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 6px 6px 2px 2px;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.5);
+    z-index: 5;
+}
+
+.bottle-neck {
+    width: 32px;
+    height: 15px;
+    background: linear-gradient(90deg, #d3d3d3, #8a8a8a, #d3d3d3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 4;
+}
+
+.bottle-body {
+    width: 220px;
+    height: 290px;
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(2px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.6), inset 0 0 30px rgba(255, 255, 255, 0.05);
+    z-index: 3;
+}
+
+/* Bottle Liquid */
+.bottle-liquid {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 70%; /* Will be dynamically changed via JS */
+    background: linear-gradient(180deg, rgba(197, 160, 89, 0.7) 0%, rgba(152, 120, 59, 0.85) 100%);
+    transition: height 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), background 0.6s ease;
+    z-index: 1;
+}
+
+/* Liquid waves/bubbles decoration */
+.bottle-liquid::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    filter: blur(1px);
+}
+
+.liquid-bubbles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+    background-size: 20px 20px;
+    animation: bubbleRise 8s linear infinite;
+}
+
+@keyframes bubbleRise {
+    0% { background-position: 0 200px; }
+    100% { background-position: 0 0; }
+}
+
+/* Glass Label */
+.bottle-label {
+    width: 150px;
+    height: 120px;
+    background-color: #ffffff;
+    color: #000000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 16px;
+    border-radius: 4px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.label-brand {
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 4px;
+    width: 100%;
+}
+
+.label-formula {
+    font-family: var(--font-serif);
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.2;
+    text-transform: capitalize;
+    color: #111111;
+}
+
+.label-details {
+    font-size: 0.55rem;
+    letter-spacing: 1px;
+    color: #666666;
+}
+
+/* Highlights */
+.glass-highlight {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    width: 12px;
+    height: 90%;
+    background: linear-gradient(to right, rgba(255,255,255,0.15), transparent);
+    border-radius: 10px;
+    pointer-events: none;
+    z-index: 3;
+}
+
+/* Scent Profile Analysis */
+.constructor-profile {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.profile-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 32px;
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+
+.profile-card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 24px;
+    color: var(--text-primary);
+}
+
+.profile-stat {
+    margin-bottom: 20px;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.stat-bar {
+    width: 100%;
+    height: 4px;
+    background-color: var(--text-muted);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.stat-progress {
+    height: 100%;
+    background-color: var(--brand-gold);
+    border-radius: 2px;
+    transition: width 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.formula-type-tag {
+    margin-top: 32px;
+    padding: 12px 16px;
+    background-color: var(--brand-gold-glow);
+    border: 1px solid var(--border-hover);
+    color: var(--brand-gold);
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.order-box {
+    margin-top: 32px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 24px;
+}
+
+.price-tag {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.price-tag .volume {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+}
+
+.btn-scent-buy {
+    width: 100%;
+    padding: 16px 24px;
+    background-color: var(--brand-gold);
+    color: var(--bg-dark);
+    border: 1px solid var(--brand-gold);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.3s;
+}
+
+.btn-scent-buy:hover {
+    background-color: transparent;
+    color: var(--brand-gold);
+    box-shadow: 0 0 15px var(--brand-gold-glow);
+}
+
+/* 8. Sensory Quiz Section */
+.quiz-section {
+    padding: 100px 0;
+    background-color: #0b0b0b;
+}
+
+.quiz-container {
+    max-width: 760px;
+    margin: 40px auto 0 auto;
+}
+
+.quiz-progress-bar {
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+.quiz-progress-fill {
+    width: 25%;
+    height: 100%;
+    background-color: var(--brand-gold);
+    transition: width 0.4s ease;
+}
+
+.quiz-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    min-height: 380px;
+}
+
+.quiz-question {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 30px;
+    line-height: 1.3;
+}
+
+.quiz-options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.quiz-option {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 20px;
+    transition: all 0.3s;
+    text-align: left;
+    outline: none;
+}
+
+.quiz-option:hover {
+    border-color: var(--brand-gold);
+    background-color: rgba(197, 160, 89, 0.05);
+}
+
+.option-num {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    color: var(--brand-gold);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.option-text {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+}
+
+/* 9. Alchemy Section */
+.alchemy-section {
+    padding: 100px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.alchemy-timeline {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.timeline-item {
+    position: relative;
+    padding: 30px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.timeline-item:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-5px);
+}
+
+.timeline-num {
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: var(--brand-gold-glow);
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    line-height: 1;
+}
+
+.timeline-content h3 {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 16px;
+    color: var(--text-primary);
+}
+
+.timeline-content p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* 10. Modals */
+.scent-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(7, 7, 7, 0.85);
+    backdrop-filter: blur(12px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.scent-modal.show {
+    display: flex;
+    opacity: 1;
+}
+
+.scent-modal-content {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 40px;
+    width: 100%;
+    max-width: 480px;
+    position: relative;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.8rem;
+    color: var(--text-secondary);
+    transition: color 0.3s;
+}
+
+.modal-close:hover {
+    color: var(--brand-gold);
+}
+
+.scent-modal h3 {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+
+.scent-modal p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+}
+
+.formula-summary {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    padding: 16px 20px;
+    border-radius: 6px;
+    margin-bottom: 24px;
+}
+
+.summary-line {
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+}
+
+.summary-line:last-child {
+    margin-bottom: 0;
+}
+
+.summary-line strong {
+    color: var(--brand-gold);
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.modal-input {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    padding: 14px 18px;
+    border-radius: 6px;
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    outline: none;
+    font-size: 0.9rem;
+    transition: border-color 0.3s;
+}
+
+.modal-input:focus {
+    border-color: var(--brand-gold);
+}
+
+.success-icon {
+    width: 64px;
+    height: 64px;
+    background-color: var(--brand-gold-glow);
+    border: 1px solid var(--brand-gold);
+    color: var(--brand-gold);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    margin: 0 auto 24px auto;
+}
+
+/* Helper Utilities */
+.w-full { width: 100%; }
+.mt-4 { margin-top: 16px; }
+
+/* 11. Footer */
+.footer {
+    background-color: #040404;
+    border-top: 1px solid var(--border-color);
+    padding: 80px 0 30px 0;
+}
+
+.footer-inner {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr 1fr;
+    gap: 60px;
+}
+
+.footer-col h4 {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    color: var(--text-primary);
+}
+
+.logo-col p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 16px;
+    max-width: 260px;
+}
+
+.links-col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.links-col a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.3s;
+}
+
+.links-col a:hover {
+    color: var(--brand-gold);
+}
+
+.contact-col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.footer-link:hover {
+    color: var(--brand-gold);
+}
+
+.contact-col .address {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-top: 8px;
+}
+
+.footer-bottom {
+    margin-top: 60px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 30px;
+}
+
+.footer-bottom p {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* 12. Media Queries */
+@media (max-width: 1024px) {
+    .hero-title { font-size: 3.5rem; }
+    .constructor-grid { grid-template-columns: 1fr; gap: 60px; }
+    .constructor-controls { order: 2; }
+    .constructor-visual { order: 1; }
+    .constructor-profile { order: 3; justify-content: center; }
+    .alchemy-timeline { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr 1fr; gap: 40px; }
+}
+
+@media (max-width: 768px) {
+    .nav { display: none; }
+    .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero-visual { justify-content: center; }
+    .quiz-options-grid { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr; }
+}

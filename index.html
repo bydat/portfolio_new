@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Портфолио веб-разработчика | Чистая HTML/CSS верстка</title>
+  <meta name="description" content="Разработка адаптивных, быстрых и чистых сайтов без конструкторов и нейрослопа. Примеры работ и контакты.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Портфолио веб-разработчика">
+  <meta property="og:description" content="Разработка адаптивных сайтов на чистом HTML/CSS/JS.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23111318'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='18' font-weight='bold' fill='%2338bdf8' text-anchor='middle'%3E%26lt%3B%2F%26gt%3B%3C/text%3E%3C/svg%3E">
+
+  <!-- Fonts & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+  <!-- Background decorative light beams -->
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <main class="page-wrapper">
+
+    <!-- ==========================================================================
+         HERO SECTION (ПЕРВЫЙ ЭКРАН — НА ВЕСЬ ЭКРАН)
+         ========================================================================== -->
+    <section class="hero-screen">
+      <div class="container hero-container">
+        <!-- Карточка позиционирования -->
+        <div class="hero-card spotlight">
+          <div class="card-glow-layer"></div>
+          <div>
+            <h1 class="intro-title" id="heroTitle">
+              <span id="typingTarget">Сайты, которые <span class="hero-highlight">реально</span> работают</span><span class="typing-cursor" aria-hidden="true"></span>
+            </h1>
+            <p class="intro-text">
+              Перед покупкой клиент открывает 3–4 сайта в поисках лучшего предложения. Я разрабатываю быстрые и убедительные веб-интерфейсы без лишнего кода: страница загружается за доли секунды, удерживает внимание и доводит посетителя до целевого действия.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ==========================================================================
+         ABOUT & SKILLS SECTION (ВТОРОЙ ЭКРАН — О СЕБЕ, ИНСТРУМЕНТЫ, НАПРАВЛЕНИЯ, КОНТАКТЫ)
+         ========================================================================== -->
+    <section id="about" class="about-bento-section">
+      <div class="container">
+        <div class="about-bento-grid">
+          
+          <!-- Карточка 1: Обо мне -->
+          <div class="bento-card bento-about-me spotlight reveal-on-scroll reveal-delay-1">
+            <div class="card-glow-layer"></div>
+            <div>
+              <div class="card-label">Обо мне</div>
+            </div>
+            <div class="about-tags">
+              <span class="about-tag">18 y. o.</span>
+              <span class="about-tag">Name: Vladimir</span>
+              <span class="about-tag">Web Dev</span>
+              <span class="about-tag">Full Stack</span>
+              <span class="about-tag">CyberSec enthusiast</span>
+              <span class="about-tag">Python Dev</span>
+              <span class="about-tag">CTF Enjoyer</span>
+            </div>
+          </div>
+
+          <!-- Карточка 2: Инструменты -->
+          <div class="bento-card bento-stack spotlight reveal-on-scroll reveal-delay-2">
+            <div class="card-glow-layer"></div>
+            <div>
+              <div class="card-label">Инструменты</div>
+            </div>
+            <div class="stack-tags">
+              <div class="stack-row stack-row-primary">
+                <span class="stack-tag">HTML</span>
+                <span class="stack-tag">CSS</span>
+                <span class="stack-tag">JavaScript</span>
+                <span class="stack-tag">Python</span>
+              </div>
+              <div class="stack-row stack-row-secondary">
+                <span class="stack-tag">FastAPI</span>
+                <span class="stack-tag">Linux</span>
+                <span class="stack-tag">GitHub</span>
+                <span class="stack-tag">Vercel</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Карточка 3: Что я создаю -->
+          <div class="bento-card bento-services spotlight reveal-on-scroll reveal-delay-3">
+            <div class="card-glow-layer"></div>
+            <div>
+              <div class="card-label">Что я создаю</div>
+            </div>
+            <div class="services-tags">
+              <span class="service-tag">Landing Pages</span>
+              <span class="service-tag">Web Applications</span>
+              <span class="service-tag">Telegram Bots</span>
+              <span class="service-tag">Data Scrapers &amp; Scripts</span>
+              <span class="service-tag">Responsive UI/UX</span>
+            </div>
+          </div>
+
+          <!-- Карточка 4: Контакты -->
+          <div id="contacts" class="bento-card bento-contacts spotlight reveal-on-scroll reveal-delay-4">
+            <div class="card-glow-layer"></div>
+            <div>
+              <div class="card-label">Контакты</div>
+            </div>
+            <div class="contact-rows">
+              <!-- Строка Telegram -->
+              <button class="contact-row-btn" data-copy="@bydat">
+                <div class="contact-row-left">
+                  <svg class="contact-icon tg-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.832.946z"/>
+                  </svg>
+                  <span>@bydat</span>
+                </div>
+                <span class="contact-row-copy">Копировать</span>
+              </button>
+
+              <!-- Строка Телефона -->
+              <button class="contact-row-btn" data-copy="+79210768770">
+                <div class="contact-row-left">
+                  <svg class="contact-icon ph-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                  <span>+7 (921) 076-87-70</span>
+                </div>
+                <span class="contact-row-copy">Копировать</span>
+              </button>
+
+            </div>
+            <div class="response-time-badge">
+              <span class="sparkle-icon">✦</span> Время работы: 8:00 - 23:00 UTC+3
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ==========================================================================
+         PROJECTS CATALOG ("КАРТОЧКИ ПРОЕКТОВ" С ПЛАВНЫМ СКРОЛЛ-ПОЯВЛЕНИЕМ)
+         ========================================================================== -->
+    <section id="projects" class="projects-section">
+      <div class="container">
+        
+        <div class="section-header reveal-on-scroll">
+          <div class="section-title-box">
+            <div class="sub-badge">КАТАЛОГ РАБОТ</div>
+            <h2>Интерактивные проекты</h2>
+            <p>Кликните по любой карточке — откроется настоящий сайт на чистом HTML, готовый к оценке</p>
+          </div>
+
+          <!-- Фильтры по категориям -->
+          <div class="filters-wrap">
+            <button class="filter-btn active" data-filter="all">Все работы (9)</button>
+            <button class="filter-btn" data-filter="beauty">Салоны &amp; Красота</button>
+            <button class="filter-btn" data-filter="auto">Авто &amp; Детейлинг</button>
+            <button class="filter-btn" data-filter="production">Мебель &amp; Производство</button>
+            <button class="filter-btn" data-filter="services">Услуги &amp; Сервисы</button>
+          </div>
+        </div>
+
+        <!-- Сетка проектов -->
+        <div class="projects-grid">
+
+          <!-- Проект 1: AURA CLINIC -->
+          <article class="project-card spotlight reveal-on-scroll" data-category="beauty">
+            <div class="card-glow-layer"></div>
+            <a href="projects/aura/index.html" class="project-card-link" title="Открыть сайт AURA CLINIC">
+              <div class="project-card-thumb">
+                <img src="assets/previews/aura.jpg" alt="Превью AURA CLINIC" loading="lazy">
+                <div class="thumb-overlay">
+                  <span class="overlay-btn">Смотреть проект ↗</span>
+                </div>
+                <span class="project-badge-tag">Салоны &amp; Красота</span>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">AURA CLINIC</h3>
+                <p class="project-desc">
+                  Премиальная клиника эстетической медицины и косметологии. Интерактивная 3D карта архитектуры лица, линза «до/после», квиз-диагностика кожи и онлайн-запись.
+                </p>
+              </div>
+            </a>
+          </article>
+
+          <!-- Проект 2: Luxury Detailing -->
+          <article class="project-card spotlight reveal-on-scroll" data-category="auto">
+            <div class="card-glow-layer"></div>
+            <a href="projects/detaling/index.html" class="project-card-link" title="Открыть сайт Luxury Detailing">
+              <div class="project-card-thumb">
+                <img src="assets/previews/detaling.jpg" alt="Превью Luxury Detailing" loading="lazy">
+                <div class="thumb-overlay">
+                  <span class="overlay-btn">Смотреть проект ↗</span>
+                </div>
+                <span class="project-badge-tag">Авто &amp; Детейлинг</span>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">Luxury Detailing</h3>
+                <p class="project-desc">
+                  Премиальный центр автодетейлинга. Динамический слайдер услуг, интерактивный калькулятор стоимости ухода, раскрывающийся FAQ и форма записи.
+                </p>
+              </div>
+            </a>
+          </article>
+
+          <!-- Проект 3: MODUS STUDIO -->
+          <article class="project-card spotlight reveal-on-scroll" data-category="production">
+            <div class="card-glow-layer"></div>
+            <a href="projects/modus/index.html" class="project-card-link" title="Открыть сайт MODUS STUDIO">
+              <div class="project-card-thumb">
+                <img src="assets/previews/modus.jpg" alt="Превью MODUS STUDIO" loading="lazy">
+                <div class="thumb-overlay">
+                  <span class="overlay-btn">Смотреть проект ↗</span>
+                </div>
+                <span class="project-badge-tag">Мебель &amp; Производство</span>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">MODUS STUDIO</h3>
+                <p class="project-desc">
+                  Интернет-магазин дизайнерской мебели на заказ. Интерактивный каталог, конфигуратор отделки и премиум-обивки (велюр, шенилл, букле), корзина и калькулятор.
+                </p>
+              </div>
+            </a>
+          </article>
+
+          <!-- Проект 4: SENSE LAB -->
+          <article class="project-card spotlight reveal-on-scroll" data-category="beauty">
+            <div class="card-glow-layer"></div>
+            <a href="projects/scent/index.html" class="project-card-link" title="Открыть сайт SENSE LAB">
+              <div class="project-card-thumb">
+                <img src="assets/previews/scent.jpg" alt="Превью SENSE LAB" loading="lazy">
+                <div class="thumb-overlay">
+                  <span class="overlay-btn">Смотреть проект ↗</span>
+                </div>
+                <span class="project-badge-tag">Салоны &amp; Красота</span>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">SENSE LAB</h3>
+                <p class="project-desc">
+                  Лаборатория селективной парфюмерии. Интерактивный онлайн-конструктор ольфакторных нот, симуляция цвета эликсира, сенсорный квиз и заказ уникальной формулы.
+                </p>
+              </div>
+            </a>
+          </article>
+
+          <!-- Проект 5: Tuning Studio Pro -->
+          <article class="project-card spotlight reveal-on-scroll" data-category="auto">
+            <div class="card-glow-layer"></div>
+            <a href="projects/tuning/index.html" class="project-card-link" title="Открыть сайт Tuning Studio Pro">
+              <div class="project-card-thumb">
+                <img src="assets/previews/tuning.jpg" alt="Превью Tuning Studio Pro" loading="lazy">
+                <div class="thumb-overlay">
+                  <span class="overlay-btn">Смотреть проект ↗</span>
+                </div>
+                <span class="project-badge-tag">Авто &amp; Детейлинг</span>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">Tuning Studio Pro</h3>
+                <p class="project-desc">
+                  Премиальное тюнинг-ателье и стайлинг спорткаров. Глитч-эффекты, динамические счетчики мощности (до 1200+ HP), галерея готовых проектов и FAQ.
+                </p>
+              </div>
+            </a>
+          </article>
+
+          <!-- Проект 6: FORTE STUDIO -->
+          <article class="project-card spotlight reveal-on-scroll" data-category="production">
+            <div class="card-glow-layer"></div>
+            <a href="projects/forte/index.html" class="project-card-link" title="Открыть сайт FORTE STUDIO">
+              <div class="project-card-thumb">
+                <img src="assets/previews/forte.jpg" alt="Превью FORTE STUDIO" loading="lazy">
+                <div class="thumb-overlay">
+                  <span class="overlay-btn">Смотреть проект ↗</span>
+                </div>
+                <span class="project-badge-tag">Мебель &amp; Производство</span>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">FORTE STUDIO</h3>
+                <p class="project-desc">
+                  Архитектурное мебельное бюро и фабрика полного цикла. Эксклюзивные кухни из шпона ореха, гардеробные системы, скрытые интеграции и онлайн-расчет сметы.
+                </p>
+              </div>
+            </a>
+          </article>
+
+          <!-- Проект 7: ТИШИНА & ДВИЖ -->
+          <article class="project-card spotlight reveal-on-scroll" data-category="services">
+            <div class="card-glow-layer"></div>
+            <a href="projects/anticafe/index.html" class="project-card-link" title="Открыть сайт ТИШИНА &amp; ДВИЖ">
+              <div class="project-card-thumb">
+                <img src="assets/previews/anticafe.jpg" alt="Превью ТИШИНА &amp; ДВИЖ" loading="lazy">
+                <div class="thumb-overlay">
+                  <span class="overlay-btn">Смотреть проект ↗</span>
+                </div>
+                <span class="project-badge-tag">Услуги &amp; Сервисы</span>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">ТИШИНА &amp; ДВИЖ</h3>
+                <p class="project-desc">
+                  Молодежное антикафе и креативный коворкинг. Интерактивный каталог настольных игр и PS5, переключение фоновых эмбиент-звуков, расчет стоимости визита.
+                </p>
+              </div>
+            </a>
+          </article>
+
+          <!-- Проект 8: Avito Pro -->
+          <article class="project-card spotlight reveal-on-scroll" data-category="services">
+            <div class="card-glow-layer"></div>
+            <a href="projects/avitopro/index.html" class="project-card-link" title="Открыть сайт Avito Pro">
+              <div class="project-card-thumb">
+                <img src="assets/previews/avitopro.jpg" alt="Превью Avito Pro" loading="lazy">
+                <div class="thumb-overlay">
+                  <span class="overlay-btn">Смотреть проект ↗</span>
+                </div>
+                <span class="project-badge-tag">Услуги &amp; Сервисы</span>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">Avito Pro</h3>
+                <p class="project-desc">
+                  Образовательная платформа по продвижению на Авито. Программа курса от алгоритмов ранжирования до юнит-экономики, интерактивные тарифы и калькулятор окупаемости.
+                </p>
+              </div>
+            </a>
+          </article>
+
+          <!-- Проект 9: Minimalist Auto -->
+          <article class="project-card spotlight reveal-on-scroll" data-category="auto">
+            <div class="card-glow-layer"></div>
+            <a href="projects/minimalist/index.html" class="project-card-link" title="Открыть сайт Minimalist Auto">
+              <div class="project-card-thumb">
+                <img src="assets/previews/minimalist.jpg" alt="Превью Minimalist Auto" loading="lazy">
+                <div class="thumb-overlay">
+                  <span class="overlay-btn">Смотреть проект ↗</span>
+                </div>
+                <span class="project-badge-tag">Авто &amp; Детейлинг</span>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">Minimalist Auto</h3>
+                <p class="project-desc">
+                  Премиум детейлинг-студия в строгом монохромном стиле. Интерактивный слайдер «До / После», кастомный курсор, бегущая строка брендов и автогалерея.
+                </p>
+              </div>
+            </a>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="portfolio-footer">
+    <div class="container footer-content">
+      <p class="footer-copy">&copy; 2026 BYDAT. All rights reserved.</p>
+      <p class="footer-author">Created by <a href="https://t.me/bydat" target="_blank" rel="noopener noreferrer">bydat</a>.</p>
+    </div>
+  </footer>
+
+  <!-- Плавающая кнопка навигации (стрелочка вниз / наверх) -->
+  <button id="scrollNavBtn" class="scroll-nav-btn" aria-label="Пролистать вниз">
+    <svg class="scroll-nav-arrow" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m6 9 6 6 6-6"/>
+    </svg>
+  </button>
+
+  <!-- Toast Notification -->
+  <div id="toast-notice" class="toast-notice">
+    <span class="toast-check">✓</span>
+    <span class="toast-text">Скопировано в буфер обмена</span>
+  </div>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>

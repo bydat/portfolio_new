@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SENSE LAB | Лаборатория селективной парфюмерии</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+    <!-- Background Ambient Glows -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="#" class="logo">SENSE<span>.</span>LAB</a>
+            <nav class="nav">
+                <a href="#about">Философия</a>
+                <a href="#constructor">Конструктор</a>
+                <a href="#quiz">Сенсорный Тест</a>
+                <a href="#alchemy">Алхимия</a>
+            </nav>
+            <div class="header-actions">
+                <a href="#constructor" class="btn-primary-scent">Создать Аромат</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <div class="container hero-inner">
+            <div class="hero-content">
+                <span class="hero-subtitle">Bespoke Olfactory Experience</span>
+                <h1 class="hero-title">Аромат как отражение вашей души</h1>
+                <p class="hero-desc">SENSE LAB — это приватная лаборатория индивидуальной парфюмерии. Мы создаем селективные формулы, основанные на ваших эмоциях, ассоциациях и характере. Разработайте свой ольфакторный автограф в нашем живом интерактивном конструкторе.</p>
+                <div class="hero-buttons">
+                    <a href="#constructor" class="btn-scent-solid">Начать смешивание</a>
+                    <a href="#quiz" class="btn-scent-text">Пройти ольфакторный тест &rarr;</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="visual-card">
+                    <img src="https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=800&q=80" alt="Selective Perfume Bottle" class="hero-image">
+                    <div class="glass-tag">
+                        <span class="tag-title">№ 07 Amber & Wood</span>
+                        <span class="tag-desc">Сложная древесно-янтарная формула с верхними нотами горького апельсина.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Scent Constructor Section -->
+    <section class="constructor-section" id="constructor">
+        <div class="container">
+            <div class="section-head text-center">
+                <span class="section-subtitle">Olfactory Mixer</span>
+                <h2 class="section-title">Сконструируйте свой аромат</h2>
+                <p class="section-desc">Настройте пропорции верхних, средних и базовых нот. Наш ольфакторный симулятор в реальном времени покажет характер парфюма, изменит плотность и цвет эликсира во флаконе.</p>
+            </div>
+
+            <div class="constructor-grid">
+                <!-- Left: Control Sliders -->
+                <div class="constructor-controls">
+                    <!-- Top Notes -->
+                    <div class="control-group">
+                        <div class="control-group-header">
+                            <h3>Верхние ноты (Citrus & Fresh)</h3>
+                            <span class="percentage-val" id="top-val">30%</span>
+                        </div>
+                        <p class="control-desc">Первое впечатление: бергамот, нероли, кардамон, лемонграсс.</p>
+                        <div class="slider-wrapper">
+                            <input type="range" id="slider-top" min="0" max="100" value="30" class="scent-slider">
+                        </div>
+                    </div>
+
+                    <!-- Heart Notes -->
+                    <div class="control-group">
+                        <div class="control-group-header">
+                            <h3>Ноты сердца (Floral & Spicy)</h3>
+                            <span class="percentage-val" id="heart-val">40%</span>
+                        </div>
+                        <p class="control-desc">Ядро характера: дамасская роза, черный перец, жасмин, инжир.</p>
+                        <div class="slider-wrapper">
+                            <input type="range" id="slider-heart" min="0" max="100" value="40" class="scent-slider">
+                        </div>
+                    </div>
+
+                    <!-- Base Notes -->
+                    <div class="control-group">
+                        <div class="control-group-header">
+                            <h3>Базовые ноты (Woody & Musky)</h3>
+                            <span class="percentage-val" id="base-val">30%</span>
+                        </div>
+                        <p class="control-desc">Шлейф и стойкость: сандал, белый мускус, пачули, ветивер, кедр.</p>
+                        <div class="slider-wrapper">
+                            <input type="range" id="slider-base" min="0" max="100" value="30" class="scent-slider">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Middle: Interactive Visual Bottle -->
+                <div class="constructor-visual">
+                    <div class="perfume-bottle-container">
+                        <!-- Cap -->
+                        <div class="bottle-cap"></div>
+                        <!-- Neck -->
+                        <div class="bottle-neck"></div>
+                        <!-- Bottle Body (Glass) -->
+                        <div class="bottle-body">
+                            <!-- Liquid inside -->
+                            <div class="bottle-liquid" id="liquid">
+                                <div class="liquid-bubbles"></div>
+                            </div>
+                            <!-- Label -->
+                            <div class="bottle-label">
+                                <div class="label-brand">SENSE LAB</div>
+                                <div class="label-formula" id="label-formula">CITRUS - Rose - SANDAL</div>
+                                <div class="label-details">FORMULATION № <span id="label-num">7309</span></div>
+                            </div>
+                            <!-- Glass highlights and reflection -->
+                            <div class="glass-highlight"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Olfactory Profile & Order -->
+                <div class="constructor-profile">
+                    <div class="profile-card">
+                        <h3>Ольфакторный Профиль</h3>
+                        <div class="profile-stat">
+                            <div class="stat-label">Свежесть / Энергия</div>
+                            <div class="stat-bar"><div class="stat-progress" id="stat-citrus" style="width: 30%;"></div></div>
+                        </div>
+                        <div class="profile-stat">
+                            <div class="stat-label">Цветочная чувственность</div>
+                            <div class="stat-bar"><div class="stat-progress" id="stat-floral" style="width: 20%;"></div></div>
+                        </div>
+                        <div class="profile-stat">
+                            <div class="stat-label">Пряность / Глубина</div>
+                            <div class="stat-bar"><div class="stat-progress" id="stat-spicy" style="width: 20%;"></div></div>
+                        </div>
+                        <div class="profile-stat">
+                            <div class="stat-label">Древесная благородность</div>
+                            <div class="stat-bar"><div class="stat-progress" id="stat-woody" style="width: 30%;"></div></div>
+                        </div>
+
+                        <div class="formula-type-tag" id="formula-type">Древесно-Цитрусовый характер</div>
+
+                        <div class="order-box">
+                            <div class="price-tag">3 900 ₽ <span class="volume">/ 15 мл (пробный формат)</span></div>
+                            <button class="btn-scent-buy" id="btn-order">Заказать ольфакторный пробник</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sensory Quiz Section -->
+    <section class="quiz-section" id="quiz">
+        <div class="container">
+            <div class="section-head text-center">
+                <span class="section-subtitle">Psychological Quiz</span>
+                <h2 class="section-title">Найдите свой архетип</h2>
+                <p class="section-desc">Пройдите короткий сенсорный тест. Мы проанализируем ваши визуальные и тактильные ассоциации и предложим оптимальную базовую формулу.</p>
+            </div>
+
+            <div class="quiz-container">
+                <!-- Steps indicator -->
+                <div class="quiz-progress-bar">
+                    <div class="quiz-progress-fill" id="quiz-progress"></div>
+                </div>
+
+                <!-- Quiz Card -->
+                <div class="quiz-card" id="quiz-card">
+                    <!-- Question and options will be dynamically loaded via JS -->
+                    <div id="quiz-question-container">
+                        <h3 class="quiz-question" id="q-title">Загрузка вопросов...</h3>
+                        <div class="quiz-options-grid" id="q-options">
+                            <!-- Options -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alchemy Section -->
+    <section class="alchemy-section" id="alchemy">
+        <div class="container">
+            <div class="section-head text-center">
+                <span class="section-subtitle">Bespoke Process</span>
+                <h2 class="section-title">Алхимия вашего аромата</h2>
+                <p class="section-desc">Как создается ваш персональный селективный флакон SENSE LAB.</p>
+            </div>
+
+            <div class="alchemy-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-num">01</div>
+                    <div class="timeline-content">
+                        <h3>Смешивание основы</h3>
+                        <p>Используя ольфакторный тест или ваши ручные настройки в симуляторе, парфюмер подбирает точную концентрацию масел.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-num">02</div>
+                    <div class="timeline-content">
+                        <h3>Созревание в темном стекле</h3>
+                        <p>Эликсир настаивается в течение 14 дней в специальных лабораторных колбах при контролируемой температуре для гармонизации верхних и базовых нот.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-num">03</div>
+                    <div class="timeline-content">
+                        <h3>Ручной розлив и гравировка</h3>
+                        <p>Аромат разливается по флаконам из итальянского стекла, укупоривается ручным прессом. На кожаный или металлический шильд наносится имя владельца и уникальный номер формулы.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Modal -->
+    <div class="scent-modal" id="order-modal">
+        <div class="scent-modal-content">
+            <span class="modal-close" id="modal-close-btn">&times;</span>
+            <h3>Оформление заказа</h3>
+            <p>Ваша индивидуальная формула парфюма успешно зафиксирована.</p>
+            <div class="formula-summary">
+                <div class="summary-line"><strong>Формула:</strong> <span id="summary-formula-text">Citrus Rose Sandal</span></div>
+                <div class="summary-line"><strong>Концентрация нот:</strong>  Верхние (<span id="sum-top">30</span>%), Сердца (<span id="sum-heart">40</span>%), База (<span id="sum-base">30</span>%)</div>
+                <div class="summary-line"><strong>Номер формулы:</strong> № <span id="summary-formula-num">7309</span></div>
+            </div>
+            <form class="modal-form" id="scent-order-form">
+                <input type="text" placeholder="Ваше имя" required class="modal-input">
+                <input type="tel" placeholder="Номер телефона" required class="modal-input">
+                <input type="email" placeholder="Email для подтверждения" required class="modal-input">
+                <button type="submit" class="btn-scent-buy w-full">Отправить в лабораторию</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="scent-modal" id="success-modal">
+        <div class="scent-modal-content text-center">
+            <span class="modal-close" id="success-close-btn">&times;</span>
+            <div class="success-icon">✓</div>
+            <h3>Формула отправлена в производство</h3>
+            <p>Наш парфюмер свяжется с вами по указанному телефону в течение 30 минут для подтверждения рецептуры и адреса доставки.</p>
+            <button class="btn-scent-solid mt-4" id="success-done-btn">Отлично</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div class="footer-col logo-col">
+                <a href="#" class="logo">SENSE<span>.</span>LAB</a>
+                <p>Лаборатория индивидуальных воспоминаний, воплощенных в аромате.</p>
+            </div>
+            <div class="footer-col links-col">
+                <h4>Навигация</h4>
+                <a href="#about">Философия</a>
+                <a href="#constructor">Конструктор</a>
+                <a href="#quiz">Сенсорный Тест</a>
+                <a href="#alchemy">Алхимия</a>
+            </div>
+            <div class="footer-col contact-col">
+                <h4>Контакты</h4>
+                <a href="tel:+79600451512" class="footer-link">+7 (960) 045-15-12</a>
+                <a href="mailto:perfume@senselab.ru" class="footer-link">perfume@senselab.ru</a>
+                <p class="address">г. Казань, ул. Волкова, 12 (по предварительной записи)</p>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>© 2026 SENSE LAB. Лимитированное производство индивидуальной парфюмерии.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
