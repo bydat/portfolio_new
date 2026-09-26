@@ -262,7 +262,11 @@ function initTikTokScrollSnap() {
     const heroTop = 0;
     const aboutTop = Math.round(aboutSection.getBoundingClientRect().top + window.scrollY);
     const projectsTop = Math.round(projectsSection.getBoundingClientRect().top + window.scrollY);
-    return { heroTop, aboutTop, projectsTop };
+    const vh = window.innerHeight;
+    const aboutHeight = aboutSection.offsetHeight;
+    const isAboutTall = aboutHeight > vh + 30;
+    const aboutBottomScroll = isAboutTall ? Math.max(aboutTop, projectsTop - vh) : aboutTop;
+    return { heroTop, aboutTop, projectsTop, vh, aboutHeight, isAboutTall, aboutBottomScroll };
   }
 
   // Silk-smooth exponential ease-out animation
@@ -371,13 +375,15 @@ function initTikTokScrollSnap() {
       e.preventDefault();
       if (isAnimating) return;
 
-      const { heroTop, aboutTop, projectsTop } = getTargets();
+      const { heroTop, aboutTop, projectsTop, isAboutTall, aboutBottomScroll } = getTargets();
       const currentY = window.scrollY;
 
       if (scrollNavBtn.classList.contains('is-up')) {
         // Листаем вверх поэтапно:
-        // Если находимся ниже блока информации (в проектах или внизу страницы) — перемещаемся на блок информации
-        if (currentY > aboutTop + 40) {
+        if (currentY > aboutBottomScroll + 40 && isAboutTall) {
+          navDirection = 'up';
+          triggerTransition(aboutBottomScroll);
+        } else if (currentY > aboutTop + 40) {
           navDirection = 'up';
           triggerTransition(aboutTop);
         } else {
@@ -390,6 +396,9 @@ function initTikTokScrollSnap() {
         if (currentY < aboutTop - 40) {
           navDirection = 'down';
           triggerTransition(aboutTop);
+        } else if (isAboutTall && currentY < aboutBottomScroll - 30) {
+          navDirection = 'down';
+          triggerTransition(aboutBottomScroll);
         } else {
           navDirection = 'down';
           triggerTransition(projectsTop);
@@ -415,7 +424,7 @@ function initTikTokScrollSnap() {
       // Ignore micro-jitter
       if (Math.abs(e.deltaY) < 18) return;
 
-      const { heroTop, aboutTop, projectsTop } = getTargets();
+      const { heroTop, aboutTop, projectsTop, isAboutTall, aboutBottomScroll } = getTargets();
       const currentY = window.scrollY;
       const isDown = e.deltaY > 0;
 
@@ -433,7 +442,7 @@ function initTikTokScrollSnap() {
         // If within 90px of top of projects, snap smoothly to About screen
         if (currentY <= projectsTop + 90) {
           e.preventDefault();
-          triggerTransition(aboutTop);
+          triggerTransition(isAboutTall ? aboutBottomScroll : aboutTop);
           return;
         }
 
@@ -453,12 +462,17 @@ function initTikTokScrollSnap() {
       // 3. ABOUT SECTION & TRANSITION ZONE (between aboutTop - 40 and projectsTop - 20)
       e.preventDefault();
       if (isDown) {
-        // Scrolling down: always go to projects
-        triggerTransition(projectsTop);
+        // Scrolling down:
+        if (isAboutTall && currentY < aboutBottomScroll - 30) {
+          triggerTransition(aboutBottomScroll);
+        } else {
+          triggerTransition(projectsTop);
+        }
       } else {
         // Scrolling UP:
-        // If we are anywhere below aboutTop + 30, we must FIRST land on aboutTop!
-        if (currentY > aboutTop + 30) {
+        if (isAboutTall && currentY > aboutTop + 30) {
+          triggerTransition(aboutTop);
+        } else if (currentY > aboutTop + 30) {
           triggerTransition(aboutTop);
         } else {
           // We are already parked on aboutTop: go to heroTop!
@@ -495,7 +509,7 @@ function initTikTokScrollSnap() {
       // Must be a clear vertical swipe (at least 35px)
       if (Math.abs(deltaY) < 35 || Math.abs(deltaY) < Math.abs(deltaX) * 1.1) return;
 
-      const { heroTop, aboutTop, projectsTop } = getTargets();
+      const { heroTop, aboutTop, projectsTop, isAboutTall, aboutBottomScroll } = getTargets();
       const currentY = window.scrollY;
       const isSwipeUp = deltaY > 0; // finger swiping up = scrolling page down
 
@@ -505,7 +519,7 @@ function initTikTokScrollSnap() {
       // Projects section
       if (currentY >= projectsTop - 20) {
         if (!isSwipeUp && currentY <= projectsTop + 90) {
-          triggerTransition(aboutTop);
+          triggerTransition(isAboutTall ? aboutBottomScroll : aboutTop);
         }
         return;
       }
@@ -520,9 +534,17 @@ function initTikTokScrollSnap() {
 
       // About section & middle zone
       if (isSwipeUp) {
-        triggerTransition(projectsTop);
+        // Finger swiping up = scrolling down
+        if (isAboutTall && currentY < aboutBottomScroll - 30) {
+          triggerTransition(aboutBottomScroll);
+        } else {
+          triggerTransition(projectsTop);
+        }
       } else {
-        if (currentY > aboutTop + 30) {
+        // Finger swiping down = scrolling up
+        if (isAboutTall && currentY > aboutTop + 30) {
+          triggerTransition(aboutTop);
+        } else if (currentY > aboutTop + 30) {
           triggerTransition(aboutTop);
         } else {
           triggerTransition(heroTop);
@@ -538,7 +560,7 @@ function initTikTokScrollSnap() {
     const downKeys = ['ArrowDown', 'PageDown', ' '];
     const upKeys = ['ArrowUp', 'PageUp'];
 
-    const { heroTop, aboutTop, projectsTop } = getTargets();
+    const { heroTop, aboutTop, projectsTop, isAboutTall, aboutBottomScroll } = getTargets();
     const currentY = window.scrollY;
 
     if (downKeys.includes(e.key)) {
@@ -549,12 +571,19 @@ function initTikTokScrollSnap() {
         triggerTransition(aboutTop);
       } else if (currentY < projectsTop - 20) {
         e.preventDefault();
-        triggerTransition(projectsTop);
+        if (isAboutTall && currentY < aboutBottomScroll - 30) {
+          triggerTransition(aboutBottomScroll);
+        } else {
+          triggerTransition(projectsTop);
+        }
       }
     } else if (upKeys.includes(e.key)) {
       navDirection = 'up';
       updateScrollNavBtn();
       if (currentY >= projectsTop - 20 && currentY <= projectsTop + 90) {
+        e.preventDefault();
+        triggerTransition(isAboutTall ? aboutBottomScroll : aboutTop);
+      } else if (currentY < projectsTop - 20 && isAboutTall && currentY > aboutTop + 30) {
         e.preventDefault();
         triggerTransition(aboutTop);
       } else if (currentY < projectsTop - 20 && currentY > aboutTop + 30) {
